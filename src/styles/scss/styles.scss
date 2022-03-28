@@ -1,0 +1,13 @@
+@import "./partials/variable";
+
+.body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: .5px;
+    color: $text-color;
+}
+
+@import "./partials/header";
+@import "./partials/home";
+@import "./partials/api";
+@import "./partials/footer";

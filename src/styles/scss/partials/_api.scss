@@ -1,0 +1,98 @@
+.api {
+    padding: 50px 0px;
+    border-top: 1px solid rgba(46, 46, 46, 0.26);
+}
+
+.api__text {
+    color: var(--primary-color);
+    font-weight: 700;
+    padding: 15px 20px;
+}
+
+.api__form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.api__input {
+    margin-right: 5px;
+    padding: 20px;
+    border-bottom: 1px solid #000000;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+    margin: 0px 30px;
+}
+
+.api__buscador {
+    padding: 0.75rem 3rem;
+    border-radius: 0px;
+}
+
+.container__card {
+    margin-top: 80px;
+}
+
+.api__card {
+    margin: 0px 5px;
+    padding: 15px 15px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: transform 0.6s, box-shadow 0.6s, filter 0.4s;
+}
+
+.api__card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.068);
+    transform: translateY(-2%);
+    transition: transform 0.2s, box-shadow 0.2s;  
+}
+
+.card__img {
+    display: block;
+    margin: 0px auto;
+    max-width: 70%;
+}
+
+
+@media screen and (max-width: $breakpoint4) {
+
+}
+
+@media screen and (max-width: $breakpoint3) {
+    .api__card {
+        margin: 20px 0px;
+    }
+}
+
+@media screen and (max-width: $breakpoint2) {
+    
+  
+}
+
+@media screen and (max-width: $breakpoint1) {
+    .api {
+        padding: 50px 25px;
+    }
+
+    .api__input {
+        margin-right: 0px;
+        padding: 10px;
+        margin: 0px 10px;
+    }
+    
+    .api__buscador {
+        padding: 0.75rem 1rem;
+        border-radius: 0px;
+    }
+
+    .api__buscador:hover {
+        background-color: #000000;
+        padding: 0.75rem 1rem;
+    }
+
+    .api__card {
+        margin: 10px 0px;
+    }
+}
