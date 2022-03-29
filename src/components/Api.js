@@ -1,8 +1,15 @@
-import {
-    NavLink
-} from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
 
 const Api = () => {
+
+    const [hero, setHero] = useState([]);
+
+    useEffect (()=>{
+        fetch("https://gateway.marvel.com/v1/public/characters?ts=1&apikey=18fb7ecdf44b4742cda3c99aad7e47e0&hash=6d0e8376fdfb3bd21746121e2f0028d6")
+        .then(response=> response.json())
+        .then(dat => setHero(dat.data.results));
+    },[]);
+
     return (
         <section className="api">
             <div className="container">
@@ -15,59 +22,19 @@ const Api = () => {
                     </form>
                 </div>
                 <div className="container__card row text-center">
-                    <div className="col-md-6 col-lg-3">
+                    {hero.map(heros => (
+                        <div className="col-md-6 col-lg-3">
                         <div className="card api__card">
-                            <img className="card__img"
-                                src="https://cdn3.iconfinder.com/data/icons/marvel-avatars-filledoutline/64/ironman-avangers-marvel-avatars-gartoon-marvel_avatars-hero-512.png"
-                                alt="mortarboard"/>
+                            <img className="card__img" src={`${heros.thumbnail.path}.${heros.thumbnail.extension}`} alt="mortarboard"/>
                             <div className="card-body">
-                                <h4 className="card-title">America</h4>
-                                <p className="card-text">Lorem ipsum dolor sit amet consectetur.</p>
-                                <p>S/123</p>
-                                <NavLink to="/" className="btn btn-dark">ver</NavLink>
+                                <h4 className="card-title">{heros.name}</h4>
+                                <p>Numero de comics: {heros.comics.available}</p>
+                                <p className="card-text">{heros.modified}</p>
+                                <button type="submit" className="btn btn-outline-dark">Ver</button>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="col-md-6 col-lg-3">
-                        <div className="card api__card">
-                            <img className="card__img"
-                                src="https://cdn3.iconfinder.com/data/icons/marvel-avatars-filledoutline/64/vision-avangers-marvel-avatars-gartoon-marvel_avatars-hero-512.png"
-                                alt="clock"/>
-                            <div className="card-body">
-                                <h4>Doctor Stranger</h4>
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere.</p>
-                                <p>S/123</p>
-                                <NavLink to="/" className="btn btn-dark">ver</NavLink>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-3">
-                        <div className="card api__card">
-                            <img className="card__img"
-                                src="https://cdn4.iconfinder.com/data/icons/heroes-villains-vol-1-colored/100/Ironman_Mark_3-512.png"
-                                alt="tarea"/>
-                            <div className="card-body">
-                                <h4>Wong</h4>
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere.</p>
-                                <p>S/123</p>
-                                <NavLink to="/" className="btn btn-dark">ver</NavLink>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-3">
-                        <div className="card api__card">
-                            <img className="card__img"
-                                src="https://cdn1.iconfinder.com/data/icons/people-avatars-23/24/people_avatar_head_captain_america_marvel_hero-512.png"
-                                alt="progreso"/>
-                            <div className="card-body">
-                                <h4>Spider Man</h4>
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere.</p>
-                                <p>S/123</p>
-                                <NavLink to="/" className="btn btn-dark">ver</NavLink>
-                            </div>
-                        </div>
-                    </div>
+                    </div>   
+                    ))}
                 </div>
             </div>
         </section>

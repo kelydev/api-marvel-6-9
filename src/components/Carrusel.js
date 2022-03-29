@@ -8,12 +8,12 @@ import fondoMarvelv1 from '../assets/img/fondoMarvelv1.jpg';
 import comiccMarvel from '../assets/img/comiccMarvel.jpg';
 import fondoMarvelAnuncio from '../assets/img/fondoMarvelAnuncio.jpg';
 
-const Home = () => {
+const Carrusel = () => {
     return (
         <main className="main">
             <div className="container-fluid">
                 <NavLink to="/" className="nav__anuncio">
-                    <img src='https://terrigen-cdn-dev.marvel.com/content/prod/2x/disneybtn_asset2x_4.png' alt="container__img" className="nav__logo"/>
+                    <img src='https://terrigen-cdn-dev.marvel.com/content/prod/2x/disneybtn_asset2x_4.png' alt="container__img" className="nav__logo-anuncio"/>
                 </NavLink>
             </div>
             <div id="demo" className="carousel slider" data-bs-ride="carousel">
@@ -56,4 +56,4 @@ const Home = () => {
     );
 }
  
-export default Home;
+export default Carrusel;

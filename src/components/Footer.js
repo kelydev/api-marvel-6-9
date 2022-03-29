@@ -4,7 +4,8 @@ import {
 
 import marvel from '../assets/img/marvel.png';
 
-const Footer = () => {
+const Footer = ({ credits }) => {
+    const { author, currentYear } = credits;
     return (
         <footer className="footer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -51,7 +52,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer__bottom">
-                    <p className="footer__parrafo">Copyright © 2021 Kelydev, Todos los derechos reservados.</p>
+                    <p className="footer__parrafo">Copyright &copy; {currentYear} {author}. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>
