@@ -45,13 +45,13 @@ const Header = () => {
         <nav className="nav__bottom">
             <ul className="nav__list--bottom">
                 <li className="nav__items">
-                    <NavLink to="/" className="nav__links">VIDEOS</NavLink>
+                    <NavLink to="/videos" className="nav__links">VIDEOS</NavLink>
                 </li>
                 <li className="nav__items">
-                    <NavLink to="/" className="nav__links">CHARACTERS</NavLink>
+                    <NavLink to="/characters" className="nav__links">CHARACTERS</NavLink>
                 </li>
                 <li className="nav__items">
-                    <NavLink to="/" className="nav__links">COMICS</NavLink>
+                    <NavLink to="/comics" className="nav__links">COMICS</NavLink>
                 </li>
                 <li className="nav__items">
                     <NavLink to="/" className="nav__links">MOVIES</NavLink>

@@ -1,34 +1,37 @@
 .header {
     background-color: $primary-color;
-}
-
-.nav__top {
-    font-weight: 700;
-    margin: 0px 54px;
-}
-
-.nav__list {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 20px;
-    margin-bottom: 0px;
-}
-
-.nav__item {
-    text-align: center;
-    padding: 0px;
-}
-
-.nav__item--signUp {
-    display: flex;
-    padding: 0px 25px;
-    align-items: center;
-}
-
-.nav__item {
-    border-left: solid .3px #3b3939;
-    border-right: solid .3px #3b3939;
-    list-style: none;
+    .nav__top {
+        font-weight: 700;
+        margin: 0px 54px;
+    }
+    .nav__list {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 20px;
+        margin-bottom: 0px;
+    }
+    .nav__item {
+        text-align: center;
+        list-style: none;
+        &--subscribe {
+            display: flex;
+            align-items: center;
+            border-left: solid .3px #3b3939;
+            border-right: solid .3px #3b3939;
+        }
+        &--search {
+            padding: 15px 15px;
+            margin: 0px;
+            border-left: solid .3px #3b3939;
+        }
+        &--signUp {
+            display: flex;
+            padding: 0px 25px;
+            align-items: center;
+            border-left: solid .3px #3b3939;
+            border-right: solid .3px #3b3939;
+        }
+    }
 }
 
 .nav__span {
@@ -53,10 +56,7 @@
     width: 125px;
 }
 
-.nav__item--subscribe {
-    display: flex;
-    align-items: center;
-}
+
 
 .nav__subscribe {
     display: flex;
@@ -84,12 +84,6 @@
 
 .nav__spanSubscribe {
     font-size: 10px;
-}
-
-.nav__item--search {
-    padding: 15px 15px;
-    margin: 0px;
-    border-left: solid .3px #3b3939;
 }
 
 .nav__search {
@@ -124,11 +118,10 @@
     text-decoration: none;
     font-size: 12px;
     padding-bottom: 10px;
-}
-
-.nav__links:hover {
-    color: $white-color;
-    border-bottom: solid 2px $secondary-color;
+    &:hover {
+        color: $white-color;
+        border-bottom: solid 2px $secondary-color;
+    }
 }
 
 @media screen and (max-width: $breakpoint4) {
